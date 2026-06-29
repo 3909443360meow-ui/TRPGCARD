@@ -176,12 +176,13 @@
             padding-bottom: 2px;
         }
 
-        /* ===== 图片上传区域 ===== */
+        /* ===== 图片上传区域（使用背景图） ===== */
         .image-upload-wrapper {
             position: relative;
             width: 100%;
             height: 0;
             padding-bottom: 56.25%;
+            /* 16:9 */
             border-radius: 16px;
             overflow: hidden;
             background: #e8ecf5;
@@ -191,11 +192,14 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
         }
 
         .image-upload-wrapper:hover {
             border-color: rgba(60, 80, 160, 0.45);
-            background: #e2e7f2;
+            background-color: #e2e7f2;
         }
 
         .image-upload-wrapper .upload-placeholder {
@@ -215,6 +219,9 @@
             pointer-events: none;
             user-select: none;
             gap: 6px;
+            background: rgba(232, 236, 245, 0.7);
+            backdrop-filter: blur(2px);
+            transition: opacity 0.3s;
         }
 
         .image-upload-wrapper .upload-placeholder .arrow-icon {
@@ -224,32 +231,27 @@
             line-height: 1;
         }
 
-        .image-upload-wrapper img {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: none;
+        .image-upload-wrapper .upload-placeholder.hidden {
+            opacity: 0;
+            pointer-events: none;
         }
 
-        .image-upload-wrapper img.loaded {
-            display: block;
+        /* 当有背景图时，边框样式微调 */
+        .image-upload-wrapper.has-image {
+            border-style: solid;
+            border-color: rgba(60, 80, 160, 0.2);
         }
-        .image-upload-wrapper .upload-placeholder.hidden {
-            display: none;
-        }
+
         #imageInput {
             display: none;
         }
 
-        /* ===== 五个信息标签 ===== */
+        /* ===== 五个信息标签（与模组简介左对齐） ===== */
         .info-grid {
             display: flex;
             flex-direction: column;
             gap: 6px;
-            padding: 4px 0 2px;
+            padding: 4px 0 2px 24px;
         }
 
         .info-row {
@@ -283,7 +285,9 @@
             transition: background 0.15s;
             min-height: 1.6em;
             line-height: 1.6;
-            word-break: break-all;
+            word-break: break-word;
+            overflow-wrap: break-word;
+            white-space: pre-wrap;
             background: transparent;
             border: 1px solid transparent;
             cursor: text;
@@ -300,15 +304,8 @@
             box-shadow: 0 0 0 3px rgba(60, 80, 160, 0.06);
         }
 
-        /* ===== 模组简介 (大文本框) ===== */
-        .textarea-wrap {
-            margin-top: 2px;
-        }
-        .textarea-wrap .block-title {
-            margin-bottom: 10px;
-        }
-
-        .auto-textarea {
+        /* ===== 可编辑内容块（替代 textarea） ===== */
+        .editable-block {
             width: 100%;
             padding: 14px 18px;
             font-size: 15px;
@@ -319,19 +316,25 @@
             border: 1.5px solid rgba(60, 80, 160, 0.15);
             border-radius: 14px;
             outline: none;
-            resize: none;
-            overflow: hidden;
-            transition: border-color 0.2s, box-shadow 0.2s;
             min-height: 72px;
             box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.02);
+            transition: border-color 0.2s, box-shadow 0.2s;
+            word-break: break-word;
+            overflow-wrap: break-word;
+            white-space: pre-wrap;
+            overflow: hidden;
+            resize: none;
+            cursor: text;
         }
 
-        .auto-textarea:focus {
+        .editable-block:focus {
             border-color: #4a6cf7;
             box-shadow: 0 0 0 4px rgba(60, 80, 160, 0.10), inset 0 1px 4px rgba(0, 0, 0, 0.02);
             background: rgba(255, 255, 255, 0.9);
         }
-        .auto-textarea::placeholder {
+
+        .editable-block:empty::before {
+            content: '点击输入';
             color: #b0bedb;
             font-weight: 400;
             font-size: 14px;
@@ -561,7 +564,7 @@
             margin-bottom: 6px;
         }
 
-        .quote-wrap .auto-textarea {
+        .quote-wrap .editable-block {
             min-height: 48px;
             padding: 12px 16px;
             font-size: 14px;
@@ -601,6 +604,9 @@
             .block {
                 padding: 18px 16px 20px;
                 border-radius: 16px;
+            }
+            .info-grid {
+                padding-left: 16px;
             }
             .info-label {
                 width: 120px;
@@ -671,6 +677,9 @@
             .mod-title {
                 font-size: 18px;
             }
+            .info-grid {
+                padding-left: 12px;
+            }
             .info-label {
                 width: 100px;
                 font-size: 13px;
@@ -683,7 +692,7 @@
                 font-size: 15px;
                 margin-bottom: 10px;
             }
-            .auto-textarea {
+            .editable-block {
                 font-size: 14px;
                 padding: 10px 14px;
                 min-height: 56px;
@@ -737,7 +746,7 @@
             .quote-wrap .quote-label {
                 font-size: 13px;
             }
-            .quote-wrap .auto-textarea {
+            .quote-wrap .editable-block {
                 font-size: 13px;
                 min-height: 44px;
                 padding: 10px 14px;
@@ -789,6 +798,9 @@
                 padding: 10px 8px 12px;
                 border-radius: 12px;
             }
+            .info-grid {
+                padding-left: 8px;
+            }
             .info-label {
                 width: 80px;
                 font-size: 12px;
@@ -819,7 +831,7 @@
             .block-title {
                 font-size: 14px;
             }
-            .auto-textarea {
+            .editable-block {
                 font-size: 13px;
                 padding: 8px 12px;
                 min-height: 48px;
@@ -890,11 +902,8 @@
         }
 
         /* ===== 图片上传过渡 ===== */
-        .image-upload-wrapper img {
-            transition: opacity 0.3s ease;
-        }
-        .image-upload-wrapper img.loaded {
-            opacity: 1;
+        .image-upload-wrapper {
+            transition: background-image 0.3s ease, border-color 0.3s, background-color 0.3s;
         }
     </style>
 </head>
@@ -924,13 +933,12 @@
 
                 <div class="mod-title">模组信息</div>
 
-                <!-- 图片上传 -->
+                <!-- 图片上传（背景图方式） -->
                 <div class="image-upload-wrapper" id="imageUploader">
                     <div class="upload-placeholder" id="uploadPlaceholder">
                         <span class="arrow-icon">↑</span>
                         <span>点击上传图片</span>
                     </div>
-                    <img id="previewImage" alt="模组封面" />
                     <input type="file" id="imageInput" accept="image/*" />
                 </div>
 
@@ -958,10 +966,10 @@
                     </div>
                 </div>
 
-                <!-- 模组简介 -->
+                <!-- 模组简介（使用可编辑div） -->
                 <div class="textarea-wrap block">
                     <div class="block-title">模组简介</div>
-                    <textarea class="auto-textarea" placeholder="点击输入" rows="2"></textarea>
+                    <div class="editable-block" contenteditable="true" role="textbox" aria-multiline="true"></div>
                 </div>
 
             </div>
@@ -1013,28 +1021,28 @@
                         <!-- 报价 / 预算 -->
                         <div class="quote-wrap open" id="quoteWrap">
                             <span class="quote-label" id="quoteLabel">报价</span>
-                            <textarea class="auto-textarea" placeholder="点击输入" rows="1"></textarea>
+                            <div class="editable-block" contenteditable="true" role="textbox" aria-multiline="true"></div>
                         </div>
                     </div>
 
                 </div>
 
-                <!-- ===== 事前须知 (不变) ===== -->
+                <!-- ===== 事前须知 ===== -->
                 <div class="big-textarea-block block">
                     <div class="block-title">事前须知</div>
-                    <textarea class="auto-textarea" placeholder="点击输入" rows="2"></textarea>
+                    <div class="editable-block" contenteditable="true" role="textbox" aria-multiline="true"></div>
                 </div>
 
                 <!-- ===== GM可以做到 / PL可以做到 (切换) ===== -->
                 <div class="big-textarea-block block" id="gmBlock">
                     <div class="block-title" id="gmTitle">GM 可以做到</div>
-                    <textarea class="auto-textarea" placeholder="点击输入" rows="2"></textarea>
+                    <div class="editable-block" contenteditable="true" role="textbox" aria-multiline="true"></div>
                 </div>
 
                 <!-- ===== 对PL的要求 / 对GM的要求 (切换) ===== -->
                 <div class="big-textarea-block block" id="plRequirementBlock">
                     <div class="block-title" id="plRequirementTitle">对 PL 的要求</div>
-                    <textarea class="auto-textarea" placeholder="点击输入" rows="2"></textarea>
+                    <div class="editable-block" contenteditable="true" role="textbox" aria-multiline="true"></div>
                 </div>
 
             </div>
@@ -1050,35 +1058,51 @@
         (function() {
             'use strict';
 
-            // ===== 1. 自动调整 textarea 高度 =====
-            const autoTextareas = document.querySelectorAll('.auto-textarea');
+            // ===== 1. 自动调整可编辑块高度 =====
+            const editableBlocks = document.querySelectorAll('.editable-block');
 
-            function resizeTextarea(el) {
+            function resizeEditable(el) {
+                // 先重置高度，再根据 scrollHeight 设置
                 el.style.height = 'auto';
                 el.style.height = el.scrollHeight + 'px';
             }
 
-            autoTextareas.forEach(function(ta) {
-                resizeTextarea(ta);
-                ta.addEventListener('input', function() {
-                    resizeTextarea(this);
+            editableBlocks.forEach(function(block) {
+                // 初始调整
+                resizeEditable(block);
+
+                // 输入时调整
+                block.addEventListener('input', function() {
+                    resizeEditable(this);
+                });
+
+                // 某些浏览器在粘贴、拖拽等操作后可能不触发input，额外监听
+                block.addEventListener('paste', function() {
+                    setTimeout(function() {
+                        resizeEditable(block);
+                    }, 10);
+                });
+                block.addEventListener('drop', function() {
+                    setTimeout(function() {
+                        resizeEditable(block);
+                    }, 10);
                 });
             });
 
+            // 窗口变化时重新调整
             let resizeTimer;
             window.addEventListener('resize', function() {
                 clearTimeout(resizeTimer);
                 resizeTimer = setTimeout(function() {
-                    autoTextareas.forEach(function(el) {
-                        resizeTextarea(el);
+                    editableBlocks.forEach(function(el) {
+                        resizeEditable(el);
                     });
                 }, 150);
             });
 
-            // ===== 2. 图片上传 =====
+            // ===== 2. 图片上传（背景图方式） =====
             const uploader = document.getElementById('imageUploader');
             const fileInput = document.getElementById('imageInput');
-            const previewImg = document.getElementById('previewImage');
             const placeholder = document.getElementById('uploadPlaceholder');
 
             uploader.addEventListener('click', function() {
@@ -1090,8 +1114,9 @@
                 if (!file) return;
                 const reader = new FileReader();
                 reader.onload = function(ev) {
-                    previewImg.src = ev.target.result;
-                    previewImg.classList.add('loaded');
+                    const dataUrl = ev.target.result;
+                    uploader.style.backgroundImage = 'url(' + dataUrl + ')';
+                    uploader.classList.add('has-image');
                     placeholder.classList.add('hidden');
                 };
                 reader.readAsDataURL(file);
@@ -1118,8 +1143,8 @@
                         if (isYes) {
                             quoteWrap.classList.add('open');
                             setTimeout(function() {
-                                const ta = quoteWrap.querySelector('.auto-textarea');
-                                if (ta) resizeTextarea(ta);
+                                const block = quoteWrap.querySelector('.editable-block');
+                                if (block) resizeEditable(block);
                             }, 50);
                         } else {
                             quoteWrap.classList.remove('open');
@@ -1176,7 +1201,7 @@
             }
 
             // ===== 6. 切换模式：招募PL ↔ 招募GM（包含报价/预算切换） =====
-            let currentMode = 'pl'; // 'pl' 或 'gm'
+            let currentMode = 'pl';
 
             const toggleBtn = document.getElementById('toggleModeBtn');
             const plCountSection = document.getElementById('plCountSection');
@@ -1187,7 +1212,6 @@
             function updateMode(mode) {
                 currentMode = mode;
                 if (mode === 'gm') {
-                    // 切换到招募GM
                     plCountSection.classList.add('hidden');
                     gmTitle.textContent = 'PL 可以做到';
                     plRequirementTitle.textContent = '对 GM 的要求';
@@ -1195,7 +1219,6 @@
                     toggleBtn.textContent = '切换到招募PL';
                     toggleBtn.classList.add('active-gm');
                 } else {
-                    // 切换到招募PL
                     plCountSection.classList.remove('hidden');
                     gmTitle.textContent = 'GM 可以做到';
                     plRequirementTitle.textContent = '对 PL 的要求';
@@ -1203,10 +1226,10 @@
                     toggleBtn.textContent = '切换到招募GM';
                     toggleBtn.classList.remove('active-gm');
                 }
-                // 重新调整textarea高度
+                // 重新调整所有可编辑块高度
                 setTimeout(function() {
-                    autoTextareas.forEach(function(ta) {
-                        resizeTextarea(ta);
+                    editableBlocks.forEach(function(el) {
+                        resizeEditable(el);
                     });
                 }, 100);
             }
@@ -1222,7 +1245,7 @@
             // 初始状态：招募PL
             updateMode('pl');
 
-            // ===== 7. 导出图片（长图截图 + 四周留白约1cm） =====
+            // ===== 7. 导出图片 =====
             const exportBtn = document.getElementById('exportBtn');
             const appContainer = document.getElementById('appContainer');
             const toolbarCard = document.getElementById('toolbarCard');
@@ -1257,7 +1280,6 @@
                 btn.textContent = '导出中...';
                 btn.disabled = true;
 
-                // 获取 app 容器的滚动尺寸（完整内容）
                 const width = appContainer.scrollWidth;
                 const height = appContainer.scrollHeight;
 
@@ -1272,15 +1294,13 @@
                     windowWidth: width,
                     windowHeight: height,
                     ignoreElements: function(element) {
-                        // 忽略工具栏卡片及其所有子元素
                         if (element === toolbarCard || toolbarCard.contains(element)) {
                             return true;
                         }
                         return false;
                     }
                 }).then(function(canvas) {
-                    // ---- 在图片四周添加边距（约1cm，在2x缩放下为76px） ----
-                    const padding = 76; // 约1cm (2x缩放下)
+                    const padding = 76;
                     const newWidth = canvas.width + padding * 2;
                     const newHeight = canvas.height + padding * 2;
 
@@ -1289,14 +1309,10 @@
                     newCanvas.height = newHeight;
                     const ctx = newCanvas.getContext('2d');
 
-                    // 填充背景色（与网页背景一致）
                     ctx.fillStyle = '#f2f5fa';
                     ctx.fillRect(0, 0, newWidth, newHeight);
-
-                    // 将原图居中绘制
                     ctx.drawImage(canvas, padding, padding);
 
-                    // 导出最终图片
                     btn.textContent = originalText;
                     btn.disabled = false;
                     const link = document.createElement('a');
