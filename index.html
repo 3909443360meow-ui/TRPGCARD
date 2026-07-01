@@ -39,14 +39,14 @@
             transition: all 0.2s;
         }
 
-        /* ===== 工具栏卡片（不导出） ===== */
+        /* ===== 工具栏卡片（右对齐） ===== */
         .toolbar-card {
             display: flex;
             flex-wrap: wrap;
             align-items: center;
             justify-content: flex-end;
-            gap: 14px;
-            padding: 14px 24px;
+            gap: 12px 18px;
+            padding: 10px 20px;
             margin-bottom: 24px;
             background: rgba(255, 255, 255, 0.7);
             backdrop-filter: blur(4px);
@@ -55,6 +55,7 @@
             border: 1px solid rgba(255, 255, 255, 0.85);
             box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03);
             min-height: 56px;
+            transition: background 0.3s;
         }
 
         .toolbar-btn {
@@ -66,11 +67,12 @@
             cursor: pointer;
             transition: all 0.25s ease;
             letter-spacing: 0.3px;
-            padding: 8px 22px;
+            padding: 8px 18px;
             white-space: nowrap;
             display: inline-flex;
             align-items: center;
             gap: 6px;
+            flex-shrink: 0;
         }
 
         .toolbar-btn:hover {
@@ -128,6 +130,7 @@
             color: #1a264f;
             display: inline-block;
             position: relative;
+            transition: color 0.3s;
         }
 
         /* ===== 双列网格 ===== */
@@ -155,7 +158,7 @@
             padding: 22px 24px 24px;
             border: 1px solid rgba(255, 255, 255, 0.85);
             box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03);
-            transition: box-shadow 0.2s;
+            transition: background 0.3s, box-shadow 0.2s;
         }
 
         .block-title {
@@ -164,7 +167,7 @@
             color: #1a264f;
             letter-spacing: 0.5px;
             margin-bottom: 14px;
-            transition: color 0.2s;
+            transition: color 0.3s;
         }
 
         /* ===== 左列 — 模组信息标题 ===== */
@@ -174,15 +177,15 @@
             color: #1a264f;
             letter-spacing: 1.5px;
             padding-bottom: 2px;
+            transition: color 0.3s;
         }
 
-        /* ===== 图片上传区域（使用背景图） ===== */
+        /* ===== 图片上传区域 ===== */
         .image-upload-wrapper {
             position: relative;
             width: 100%;
             height: 0;
             padding-bottom: 56.25%;
-            /* 16:9 */
             border-radius: 16px;
             overflow: hidden;
             background: #e8ecf5;
@@ -236,7 +239,6 @@
             pointer-events: none;
         }
 
-        /* 当有背景图时，边框样式微调 */
         .image-upload-wrapper.has-image {
             border-style: solid;
             border-color: rgba(60, 80, 160, 0.2);
@@ -246,7 +248,7 @@
             display: none;
         }
 
-        /* ===== 五个信息标签（与模组简介左对齐） ===== */
+        /* ===== 五个信息标签 ===== */
         .info-grid {
             display: flex;
             flex-direction: column;
@@ -272,25 +274,26 @@
             font-size: 15px;
             letter-spacing: 0.02em;
             line-height: 1.6;
+            transition: color 0.3s;
         }
 
         .info-value {
             flex: 1;
             font-size: 15px;
-            color: #1a264f;
             font-weight: 500;
             padding: 2px 6px;
             border-radius: 6px;
             outline: none;
-            transition: background 0.15s;
+            transition: background 0.15s, color 0.3s, border-color 0.2s;
             min-height: 1.6em;
             line-height: 1.6;
             word-break: break-word;
             overflow-wrap: break-word;
             white-space: pre-wrap;
-            background: transparent;
+            background: rgba(255, 255, 255, 0.5);
             border: 1px solid transparent;
             cursor: text;
+            color: #1a264f;
         }
 
         .info-value:empty::before {
@@ -299,12 +302,12 @@
             font-weight: 400;
         }
         .info-value:focus {
-            background: rgba(255, 255, 255, 0.7);
+            background: rgba(255, 255, 255, 0.8);
             border-color: rgba(60, 80, 160, 0.25);
             box-shadow: 0 0 0 3px rgba(60, 80, 160, 0.06);
         }
 
-        /* ===== 可编辑内容块（替代 textarea） ===== */
+        /* ===== 可编辑内容块 ===== */
         .editable-block {
             width: 100%;
             padding: 14px 18px;
@@ -312,13 +315,13 @@
             font-family: inherit;
             line-height: 1.7;
             color: #1a264f;
-            background: rgba(255, 255, 255, 0.7);
+            background: rgba(255, 255, 255, 0.5);
             border: 1.5px solid rgba(60, 80, 160, 0.15);
             border-radius: 14px;
             outline: none;
             min-height: 72px;
             box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.02);
-            transition: border-color 0.2s, box-shadow 0.2s;
+            transition: border-color 0.2s, box-shadow 0.2s, background 0.2s, color 0.3s;
             word-break: break-word;
             overflow-wrap: break-word;
             white-space: pre-wrap;
@@ -330,7 +333,7 @@
         .editable-block:focus {
             border-color: #4a6cf7;
             box-shadow: 0 0 0 4px rgba(60, 80, 160, 0.10), inset 0 1px 4px rgba(0, 0, 0, 0.02);
-            background: rgba(255, 255, 255, 0.9);
+            background: rgba(255, 255, 255, 0.8);
         }
 
         .editable-block:empty::before {
@@ -355,6 +358,7 @@
             color: #1a264f;
             display: block;
             margin-bottom: 8px;
+            transition: color 0.3s;
         }
 
         /* 游玩方式 */
@@ -450,6 +454,7 @@
             font-weight: 600;
             color: #1a264f;
             white-space: nowrap;
+            transition: color 0.3s;
         }
 
         .form-row .input-text {
@@ -459,8 +464,8 @@
             border: 1.5px solid rgba(60, 80, 160, 0.15);
             border-radius: 12px;
             outline: none;
-            background: rgba(255, 255, 255, 0.7);
-            transition: border-color 0.2s, box-shadow 0.2s;
+            background: rgba(255, 255, 255, 0.5);
+            transition: border-color 0.2s, box-shadow 0.2s, color 0.3s;
             color: #1a264f;
             width: 72px;
             text-align: center;
@@ -470,7 +475,7 @@
         .form-row .input-text:focus {
             border-color: #4a6cf7;
             box-shadow: 0 0 0 4px rgba(60, 80, 160, 0.08);
-            background: rgba(255, 255, 255, 0.9);
+            background: rgba(255, 255, 255, 0.8);
         }
 
         .form-row .input-text.number {
@@ -514,6 +519,7 @@
             font-weight: 600;
             color: #1a264f;
             white-space: nowrap;
+            transition: color 0.3s;
         }
 
         .pay-options {
@@ -562,6 +568,7 @@
             color: #4a6cf7;
             display: block;
             margin-bottom: 6px;
+            transition: color 0.3s;
         }
 
         .quote-wrap .editable-block {
@@ -585,14 +592,13 @@
                 border-radius: 28px;
             }
             .toolbar-card {
-                padding: 12px 16px;
+                padding: 10px 14px;
+                gap: 10px 14px;
                 min-height: 48px;
-                gap: 10px;
-                justify-content: flex-end;
             }
             .toolbar-btn {
                 font-size: 13px;
-                padding: 6px 16px;
+                padding: 6px 14px;
             }
             .app-header h1 {
                 font-size: 28px;
@@ -648,15 +654,14 @@
                 border-radius: 20px;
             }
             .toolbar-card {
-                padding: 10px 12px;
-                min-height: 42px;
-                gap: 8px;
-                flex-wrap: wrap;
+                padding: 8px 12px;
+                min-height: 40px;
+                gap: 8px 10px;
                 justify-content: center;
             }
             .toolbar-btn {
                 font-size: 12px;
-                padding: 5px 14px;
+                padding: 5px 12px;
             }
             .app-header {
                 padding-bottom: 18px;
@@ -774,14 +779,15 @@
                 border-radius: 16px;
             }
             .toolbar-card {
-                padding: 8px 10px;
-                min-height: 36px;
-                gap: 6px;
+                padding: 6px 8px;
+                min-height: 34px;
+                gap: 6px 8px;
                 border-radius: 14px;
+                justify-content: center;
             }
             .toolbar-btn {
                 font-size: 11px;
-                padding: 4px 12px;
+                padding: 4px 10px;
             }
             .app-header {
                 padding-bottom: 14px;
@@ -905,17 +911,506 @@
         .image-upload-wrapper {
             transition: background-image 0.3s ease, border-color 0.3s, background-color 0.3s;
         }
+
+        /* ============================================================ */
+        /* ===== 富文本悬浮工具栏 ===== */
+        /* ============================================================ */
+        #formatToolbar {
+            position: fixed;
+            z-index: 10000;
+            display: none;
+            background: rgba(255, 255, 255, 0.96);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border-radius: 12px;
+            padding: 6px 10px;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.15), 0 1px 4px rgba(0, 0, 0, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            gap: 4px;
+            align-items: center;
+            user-select: none;
+            pointer-events: auto;
+            white-space: nowrap;
+            width: auto;
+            min-width: 120px;
+        }
+
+        #formatToolbar .toolbar-group {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        #formatToolbar .fmt-btn {
+            width: 32px;
+            height: 32px;
+            border: none;
+            border-radius: 8px;
+            background: transparent;
+            cursor: pointer;
+            font-size: 15px;
+            font-weight: 500;
+            color: #333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.15s ease;
+            font-family: 'Inter', -apple-system, sans-serif;
+            position: relative;
+        }
+
+        #formatToolbar .fmt-btn:hover {
+            background: rgba(60, 80, 160, 0.08);
+        }
+        #formatToolbar .fmt-btn:active {
+            background: rgba(60, 80, 160, 0.15);
+            transform: scale(0.92);
+        }
+
+        #formatToolbar .fmt-btn.bold {
+            font-weight: 700;
+        }
+        #formatToolbar .fmt-btn.italic {
+            font-style: italic;
+        }
+
+        /* ---- 颜色选择器按钮（圆形，缩小尺寸） ---- */
+        #formatToolbar .fmt-btn.color-picker-btn {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            padding: 0;
+            position: relative;
+            background: transparent;
+            border: 2px solid #d0d8e8;
+            flex-shrink: 0;
+            overflow: hidden;
+            transition: border-color 0.25s ease, transform 0.2s ease;
+        }
+
+        #formatToolbar .fmt-btn.color-picker-btn:hover {
+            border-color: #4a6cf7;
+            transform: scale(1.05);
+        }
+
+        #formatToolbar .fmt-btn.color-picker-btn .color-preview {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: #1a264f;
+            transition: background 0.2s ease;
+        }
+
+        /* ---- 自定义颜色选择器弹出面板 ---- */
+        #customColorPicker {
+            position: fixed;
+            z-index: 10001;
+            display: none;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border-radius: 14px;
+            padding: 16px 18px 18px;
+            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.18), 0 2px 8px rgba(0, 0, 0, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            user-select: none;
+            pointer-events: auto;
+            min-width: 200px;
+        }
+
+        #customColorPicker.show {
+            display: block;
+            animation: pickerFadeIn 0.15s ease;
+        }
+
+        @keyframes pickerFadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.96) translateY(4px);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+
+        #customColorPicker .picker-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            font-size: 13px;
+            font-weight: 600;
+            color: #1a264f;
+        }
+
+        #customColorPicker .picker-header .close-picker {
+            background: none;
+            border: none;
+            font-size: 18px;
+            cursor: pointer;
+            color: #999;
+            padding: 0 4px;
+            line-height: 1;
+            transition: color 0.2s;
+        }
+
+        #customColorPicker .picker-header .close-picker:hover {
+            color: #333;
+        }
+
+        #customColorPicker .color-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 6px;
+            margin-bottom: 10px;
+        }
+
+        #customColorPicker .color-swatch {
+            width: 100%;
+            aspect-ratio: 1;
+            border-radius: 8px;
+            border: 2px solid transparent;
+            cursor: pointer;
+            transition: all 0.15s ease;
+            position: relative;
+        }
+
+        #customColorPicker .color-swatch:hover {
+            transform: scale(1.08);
+            border-color: rgba(60, 80, 160, 0.3);
+            z-index: 2;
+        }
+
+        #customColorPicker .color-swatch.active {
+            border-color: #4a6cf7;
+            box-shadow: 0 0 0 2px rgba(74, 108, 247, 0.3);
+        }
+
+        #customColorPicker .picker-bottom {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding-top: 10px;
+            border-top: 1px solid rgba(0, 0, 0, 0.06);
+        }
+
+        #customColorPicker .picker-bottom label {
+            font-size: 13px;
+            font-weight: 500;
+            color: #555;
+            white-space: nowrap;
+        }
+
+        #customColorPicker .picker-bottom input[type="color"] {
+            width: 36px;
+            height: 36px;
+            border: 2px solid #d0d8e8;
+            border-radius: 8px;
+            cursor: pointer;
+            padding: 2px;
+            background: #fff;
+        }
+
+        #customColorPicker .picker-bottom input[type="color"]::-webkit-color-swatch-wrapper {
+            padding: 0;
+        }
+
+        #customColorPicker .picker-bottom input[type="color"]::-webkit-color-swatch {
+            border: none;
+            border-radius: 6px;
+        }
+
+        #customColorPicker .picker-bottom .hex-input {
+            flex: 1;
+            padding: 6px 10px;
+            border: 2px solid #d0d8e8;
+            border-radius: 8px;
+            font-size: 13px;
+            font-family: monospace;
+            outline: none;
+            background: rgba(255, 255, 255, 0.6);
+            transition: border-color 0.2s;
+            width: 80px;
+        }
+
+        #customColorPicker .picker-bottom .hex-input:focus {
+            border-color: #4a6cf7;
+        }
+
+        #formatToolbar .fmt-btn .tooltip {
+            display: none;
+            position: absolute;
+            bottom: 110%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            font-size: 11px;
+            font-weight: 400;
+            padding: 2px 8px;
+            border-radius: 4px;
+            white-space: nowrap;
+            pointer-events: none;
+        }
+
+        #formatToolbar .fmt-btn:hover .tooltip {
+            display: block;
+        }
+
+        #formatToolbar.show {
+            display: flex;
+            animation: toolbarFadeIn 0.15s ease;
+        }
+
+        @keyframes toolbarFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(6px) scale(0.96);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        /* 小屏适配 */
+        @media (max-width: 600px) {
+            #formatToolbar {
+                padding: 4px 8px;
+                border-radius: 10px;
+                gap: 2px;
+            }
+            #formatToolbar .fmt-btn {
+                width: 28px;
+                height: 28px;
+                font-size: 13px;
+            }
+            #formatToolbar .fmt-btn.color-picker-btn {
+                width: 24px;
+                height: 24px;
+            }
+            #customColorPicker {
+                padding: 12px 14px 14px;
+                min-width: 170px;
+            }
+            #customColorPicker .color-grid {
+                gap: 4px;
+            }
+        }
+
+        /* ============================================================ */
+        /* ===== 悬浮公告栏 ===== */
+        /* ============================================================ */
+        #announcementOverlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.35);
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
+            z-index: 99999;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            animation: overlayFadeIn 0.3s ease;
+        }
+
+        #announcementOverlay.show {
+            display: flex;
+        }
+
+        @keyframes overlayFadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        #announcementBox {
+            background: rgba(255, 255, 255, 0.96);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-radius: 24px;
+            padding: 32px 38px 30px;
+            max-width: 520px;
+            width: 92%;
+            box-shadow: 0 24px 64px rgba(0, 0, 0, 0.20), 0 8px 24px rgba(0, 0, 0, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            position: relative;
+            animation: boxSlideUp 0.35s ease;
+        }
+
+        @keyframes boxSlideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px) scale(0.96);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        #announcementBox .close-btn {
+            position: absolute;
+            top: 14px;
+            right: 18px;
+            background: none;
+            border: none;
+            font-size: 22px;
+            cursor: pointer;
+            color: #b0b8c8;
+            transition: color 0.25s, transform 0.2s;
+            line-height: 1;
+            padding: 0 4px;
+        }
+
+        #announcementBox .close-btn:hover {
+            color: #1a264f;
+            transform: rotate(90deg);
+        }
+
+        #announcementBox .announce-icon {
+            font-size: 32px;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        #announcementBox .announce-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: #1a264f;
+            margin-bottom: 12px;
+            letter-spacing: 0.5px;
+        }
+
+        #announcementBox .announce-body {
+            font-size: 15px;
+            line-height: 1.7;
+            color: #2d3a5a;
+            user-select: none;
+            pointer-events: none;
+        }
+
+        #announcementBox .announce-body strong {
+            color: #1a264f;
+        }
+
+        #announcementBox .announce-footer {
+            margin-top: 18px;
+            text-align: right;
+            font-size: 13px;
+            color: #8a9bbd;
+            border-top: 1px solid rgba(60, 80, 140, 0.06);
+            padding-top: 14px;
+            user-select: none;
+            pointer-events: none;
+        }
+
+        /* 响应式公告栏 */
+        @media (max-width: 600px) {
+            #announcementBox {
+                padding: 24px 22px 22px;
+                max-width: 94%;
+                border-radius: 20px;
+            }
+            #announcementBox .announce-title {
+                font-size: 17px;
+            }
+            #announcementBox .announce-body {
+                font-size: 14px;
+                line-height: 1.6;
+            }
+            #announcementBox .close-btn {
+                top: 12px;
+                right: 14px;
+                font-size: 20px;
+            }
+        }
+
+        @media (max-width: 400px) {
+            #announcementBox {
+                padding: 18px 16px 18px;
+                border-radius: 16px;
+            }
+            #announcementBox .announce-title {
+                font-size: 15px;
+            }
+            #announcementBox .announce-body {
+                font-size: 13px;
+                line-height: 1.5;
+            }
+            #announcementBox .close-btn {
+                top: 10px;
+                right: 12px;
+                font-size: 18px;
+            }
+        }
     </style>
 </head>
 
 <body>
 
+    <!-- ===== 悬浮公告栏 ===== -->
+    <div id="announcementOverlay">
+        <div id="announcementBox">
+            <button class="close-btn" id="closeAnnouncement" title="关闭公告">✕</button>
+            <span class="announce-icon">📢</span>
+            <div class="announce-title">更新公告</div>
+            <div class="announce-body">
+                修正了一部分字体不显示的bug，增加了文字编辑工具，选中文字后可以将文字加粗/斜体/改色。
+            </div>
+            <div class="announce-footer">— 点击右上角关闭 —</div>
+        </div>
+    </div>
+
+    <!-- ===== 富文本悬浮工具栏 ===== -->
+    <div id="formatToolbar" class="">
+        <div class="toolbar-group">
+            <button class="fmt-btn bold" data-cmd="bold" title="加粗">
+                <span>B</span>
+                <span class="tooltip">加粗</span>
+            </button>
+            <button class="fmt-btn italic" data-cmd="italic" title="斜体">
+                <span>I</span>
+                <span class="tooltip">斜体</span>
+            </button>
+            <!-- 颜色选择器（缩小圆形按钮） -->
+            <button class="fmt-btn color-picker-btn" id="colorPickerBtn" title="文字颜色">
+                <span class="color-preview" id="colorPreview" style="background:#1a264f;"></span>
+                <span class="tooltip">文字颜色</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- ===== 自定义颜色选择器弹出面板 ===== -->
+    <div id="customColorPicker">
+        <div class="picker-header">
+            <span>选择颜色</span>
+            <button class="close-picker" id="closeColorPicker">✕</button>
+        </div>
+        <div class="color-grid" id="colorGrid">
+            <!-- 预设颜色由 JS 动态生成 -->
+        </div>
+        <div class="picker-bottom">
+            <label>自定义</label>
+            <input type="color" id="pickerColorInput" value="#1a264f" />
+            <input type="text" class="hex-input" id="pickerHexInput" placeholder="#000000" maxlength="7" />
+        </div>
+    </div>
+
+    <!-- ===== 主容器 ===== -->
     <div class="app" id="appContainer">
 
-        <!-- ===== 工具栏卡片（不导出） ===== -->
+        <!-- ===== 工具栏卡片 ===== -->
         <div class="toolbar-card" id="toolbarCard">
-            <button class="toolbar-btn btn-export" id="exportBtn">📷 导出图片</button>
             <button class="toolbar-btn btn-toggle" id="toggleModeBtn">切换到招募GM</button>
+            <button class="toolbar-btn btn-export" id="exportBtn">📷 导出图片</button>
         </div>
 
         <!-- ===== 顶部标题 ===== -->
@@ -933,7 +1428,7 @@
 
                 <div class="mod-title">模组信息</div>
 
-                <!-- 图片上传（背景图方式） -->
+                <!-- 图片上传 -->
                 <div class="image-upload-wrapper" id="imageUploader">
                     <div class="upload-placeholder" id="uploadPlaceholder">
                         <span class="arrow-icon">↑</span>
@@ -966,7 +1461,7 @@
                     </div>
                 </div>
 
-                <!-- 模组简介（使用可编辑div） -->
+                <!-- 模组简介 -->
                 <div class="textarea-wrap block">
                     <div class="block-title">模组简介</div>
                     <div class="editable-block" contenteditable="true" role="textbox" aria-multiline="true"></div>
@@ -1058,49 +1553,80 @@
         (function() {
             'use strict';
 
-            // ===== 1. 自动调整可编辑块高度 =====
+            // ============================================================
+            // 0. 公告栏控制
+            // ============================================================
+            const overlay = document.getElementById('announcementOverlay');
+            const closeAnnounceBtn = document.getElementById('closeAnnouncement');
+
+            function showAnnouncement() {
+                overlay.classList.add('show');
+            }
+
+            function hideAnnouncement() {
+                overlay.classList.remove('show');
+            }
+
+            closeAnnounceBtn.addEventListener('click', hideAnnouncement);
+
+            // 点击遮罩背景也可关闭（但不要误触内容区）
+            overlay.addEventListener('click', function(e) {
+                if (e.target === overlay) {
+                    hideAnnouncement();
+                }
+            });
+
+            // 页面加载后显示公告
+            window.addEventListener('load', function() {
+                // 延迟一点点，让页面渲染更平滑
+                setTimeout(showAnnouncement, 300);
+            });
+
+            // ============================================================
+            // 1. 自动调整可编辑块高度
+            // ============================================================
             const editableBlocks = document.querySelectorAll('.editable-block');
+            const infoValues = document.querySelectorAll('.info-value');
 
             function resizeEditable(el) {
-                // 先重置高度，再根据 scrollHeight 设置
                 el.style.height = 'auto';
                 el.style.height = el.scrollHeight + 'px';
             }
 
-            editableBlocks.forEach(function(block) {
-                // 初始调整
-                resizeEditable(block);
+            function resizeAll() {
+                [...editableBlocks, ...infoValues].forEach(function(el) {
+                    resizeEditable(el);
+                });
+            }
+            resizeAll();
 
-                // 输入时调整
-                block.addEventListener('input', function() {
+            [...editableBlocks, ...infoValues].forEach(function(el) {
+                el.addEventListener('input', function() {
                     resizeEditable(this);
                 });
-
-                // 某些浏览器在粘贴、拖拽等操作后可能不触发input，额外监听
-                block.addEventListener('paste', function() {
+                el.addEventListener('paste', function() {
                     setTimeout(function() {
-                        resizeEditable(block);
+                        resizeEditable(el);
                     }, 10);
                 });
-                block.addEventListener('drop', function() {
+                el.addEventListener('drop', function() {
                     setTimeout(function() {
-                        resizeEditable(block);
+                        resizeEditable(el);
                     }, 10);
                 });
             });
 
-            // 窗口变化时重新调整
             let resizeTimer;
             window.addEventListener('resize', function() {
                 clearTimeout(resizeTimer);
                 resizeTimer = setTimeout(function() {
-                    editableBlocks.forEach(function(el) {
-                        resizeEditable(el);
-                    });
+                    resizeAll();
                 }, 150);
             });
 
-            // ===== 2. 图片上传（背景图方式） =====
+            // ============================================================
+            // 2. 图片上传
+            // ============================================================
             const uploader = document.getElementById('imageUploader');
             const fileInput = document.getElementById('imageInput');
             const placeholder = document.getElementById('uploadPlaceholder');
@@ -1122,7 +1648,9 @@
                 reader.readAsDataURL(file);
             });
 
-            // ===== 3. 选项芯片 (点击切换) =====
+            // ============================================================
+            // 3. 选项芯片 (点击切换)
+            // ============================================================
             const chips = document.querySelectorAll('.option-chip');
 
             chips.forEach(function(chip) {
@@ -1136,7 +1664,6 @@
                     });
                     this.classList.add('active');
 
-                    // 有偿招募逻辑
                     if (group === 'pay') {
                         const quoteWrap = document.getElementById('quoteWrap');
                         const isYes = this.dataset.value === 'yes';
@@ -1153,8 +1680,9 @@
                 });
             });
 
-            // ===== 4. 初始化状态 =====
-            // 确保有偿招募 '是' 激活，报价框打开
+            // ============================================================
+            // 4. 初始化状态
+            // ============================================================
             let payActive = document.querySelector('.option-chip[data-group="pay"].active');
             if (!payActive) {
                 const yesChip = document.querySelector('.option-chip[data-group="pay"][data-value="yes"]');
@@ -1170,14 +1698,15 @@
                 quoteWrap.classList.remove('open');
             }
 
-            // 游玩方式至少一个激活
             const playActive = document.querySelector('.option-chip[data-group="play"].active');
             if (!playActive) {
                 const first = document.querySelector('.option-chip[data-group="play"]');
                 if (first) first.classList.add('active');
             }
 
-            // ===== 5. 数字输入限制 (仅手动输入) =====
+            // ============================================================
+            // 5. 数字输入限制
+            // ============================================================
             const numberInput = document.getElementById('playerCount');
             if (numberInput) {
                 numberInput.addEventListener('input', function() {
@@ -1200,7 +1729,9 @@
                 });
             }
 
-            // ===== 6. 切换模式：招募PL ↔ 招募GM（包含报价/预算切换） =====
+            // ============================================================
+            // 6. 切换模式（招募PL / 招募GM）
+            // ============================================================
             let currentMode = 'pl';
 
             const toggleBtn = document.getElementById('toggleModeBtn');
@@ -1226,11 +1757,8 @@
                     toggleBtn.textContent = '切换到招募GM';
                     toggleBtn.classList.remove('active-gm');
                 }
-                // 重新调整所有可编辑块高度
                 setTimeout(function() {
-                    editableBlocks.forEach(function(el) {
-                        resizeEditable(el);
-                    });
+                    resizeAll();
                 }, 100);
             }
 
@@ -1242,15 +1770,449 @@
                 }
             });
 
-            // 初始状态：招募PL
             updateMode('pl');
 
-            // ===== 7. 导出图片 =====
+            // ============================================================
+            // 7. 粘贴统一格式（不保留原格式）
+            // ============================================================
+            const editableElements = document.querySelectorAll('[contenteditable="true"]');
+            editableElements.forEach(function(el) {
+                el.addEventListener('paste', function(e) {
+                    e.preventDefault();
+                    const text = (e.clipboardData || window.clipboardData).getData('text/plain');
+                    document.execCommand('insertText', false, text);
+                    this.dispatchEvent(new Event('input'));
+                });
+            });
+
+            // ============================================================
+            // 8. 富文本悬浮工具栏（加粗、斜体、颜色）
+            // ============================================================
+            const toolbar = document.getElementById('formatToolbar');
+            const colorPreview = document.getElementById('colorPreview');
+            const colorPickerBtn = document.getElementById('colorPickerBtn');
+            const customPicker = document.getElementById('customColorPicker');
+            const closePickerBtn = document.getElementById('closeColorPicker');
+            const colorGrid = document.getElementById('colorGrid');
+            const pickerColorInput = document.getElementById('pickerColorInput');
+            const pickerHexInput = document.getElementById('pickerHexInput');
+
+            let savedRange = null;
+            let toolbarVisible = false;
+            let pickerVisible = false;
+            let currentColor = '#1a264f';
+            let isApplyingColor = false;
+
+            // 预设颜色
+            const presetColors = [
+                '#1a264f', '#4a6cf7', '#e74c3c', '#e67e22', '#f1c40f',
+                '#2ecc71', '#1abc9c', '#3498db', '#9b59b6', '#e84393',
+                '#2d3436', '#636e72', '#b2bec3', '#fd79a8', '#00b894',
+                '#0984e3', '#6c5ce7', '#fdcb6e', '#e17055', '#00cec9'
+            ];
+
+            // 生成颜色网格
+            function renderColorGrid(selectedColor) {
+                colorGrid.innerHTML = '';
+                presetColors.forEach(function(color) {
+                    const swatch = document.createElement('div');
+                    swatch.className = 'color-swatch';
+                    if (color === selectedColor) {
+                        swatch.classList.add('active');
+                    }
+                    swatch.style.background = color;
+                    swatch.dataset.color = color;
+                    swatch.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        applyColor(color);
+                    });
+                    colorGrid.appendChild(swatch);
+                });
+            }
+
+            // 应用颜色到选中文字（核心函数，保持选区稳定）
+            function applyColor(color) {
+                if (isApplyingColor) return;
+                isApplyingColor = true;
+
+                try {
+                    currentColor = color;
+                    colorPreview.style.background = color;
+                    pickerColorInput.value = color;
+                    pickerHexInput.value = color;
+
+                    // 更新网格选中状态
+                    document.querySelectorAll('.color-swatch').forEach(function(el) {
+                        el.classList.toggle('active', el.dataset.color === color);
+                    });
+
+                    // 恢复选区
+                    restoreSelection();
+
+                    // 检查选区是否有效
+                    const sel = window.getSelection();
+                    if (sel && !sel.isCollapsed && sel.rangeCount > 0) {
+                        try {
+                            document.execCommand('foreColor', false, color);
+                        } catch (e) {
+                            console.warn('execCommand foreColor failed:', e);
+                        }
+                    }
+
+                    // 重新保存选区
+                    saveSelection();
+
+                } finally {
+                    isApplyingColor = false;
+                }
+            }
+
+            // 显示颜色选择器
+            function showColorPicker(anchorRect) {
+                const pickerWidth = customPicker.offsetWidth || 220;
+                const pickerHeight = customPicker.offsetHeight || 260;
+                const gap = 8;
+
+                let left = anchorRect.left + (anchorRect.width - pickerWidth) / 2;
+                let top = anchorRect.top - pickerHeight - gap;
+
+                if (top < 10) {
+                    top = anchorRect.bottom + gap;
+                }
+
+                if (left < 10) left = 10;
+                if (left + pickerWidth > window.innerWidth - 10) {
+                    left = window.innerWidth - pickerWidth - 10;
+                }
+                if (top + pickerHeight > window.innerHeight - 10) {
+                    top = window.innerHeight - pickerHeight - 10;
+                }
+                if (top < 10) top = 10;
+
+                customPicker.style.left = left + 'px';
+                customPicker.style.top = top + 'px';
+                customPicker.classList.add('show');
+                pickerVisible = true;
+            }
+
+            // 隐藏颜色选择器
+            function hideColorPicker() {
+                customPicker.classList.remove('show');
+                pickerVisible = false;
+            }
+
+            // 切换颜色选择器
+            function toggleColorPicker(anchorRect) {
+                if (pickerVisible) {
+                    hideColorPicker();
+                } else {
+                    saveSelection();
+                    renderColorGrid(currentColor);
+                    pickerColorInput.value = currentColor;
+                    pickerHexInput.value = currentColor;
+                    showColorPicker(anchorRect);
+                }
+            }
+
+            // 检查选区是否在可编辑区域内
+            function isInEditable(sel) {
+                if (!sel || sel.rangeCount === 0) return false;
+                const range = sel.getRangeAt(0);
+                if (range.collapsed) return false;
+                let node = range.commonAncestorContainer;
+                if (node.nodeType === Node.TEXT_NODE) {
+                    node = node.parentNode;
+                }
+                while (node) {
+                    if (node.classList && (node.classList.contains('info-value') || node.classList.contains(
+                            'editable-block'))) {
+                        return true;
+                    }
+                    node = node.parentNode;
+                }
+                return false;
+            }
+
+            // 获取选区边界矩形
+            function getSelectionRect(sel) {
+                if (!sel || sel.rangeCount === 0) return null;
+                const range = sel.getRangeAt(0);
+                if (range.collapsed) return null;
+                const rects = range.getClientRects();
+                if (rects.length === 0) return null;
+                let left = Infinity,
+                    right = -Infinity,
+                    top = Infinity,
+                    bottom = -Infinity;
+                for (let i = 0; i < rects.length; i++) {
+                    const r = rects[i];
+                    if (r.left < left) left = r.left;
+                    if (r.right > right) right = r.right;
+                    if (r.top < top) top = r.top;
+                    if (r.bottom > bottom) bottom = r.bottom;
+                }
+                return { left, right, top, bottom, width: right - left, height: bottom - top };
+            }
+
+            // 显示工具栏
+            function showToolbar(rect) {
+                const toolbarWidth = toolbar.offsetWidth || 140;
+                const toolbarHeight = 48;
+                const gap = 10;
+
+                let top = rect.top - toolbarHeight - gap;
+                let left = rect.left + (rect.width - toolbarWidth) / 2;
+
+                if (top < 10) {
+                    top = rect.bottom + gap;
+                }
+
+                const maxLeft = window.innerWidth - toolbarWidth - 10;
+                if (left < 10) left = 10;
+                if (left > maxLeft) left = maxLeft;
+
+                toolbar.style.left = left + 'px';
+                toolbar.style.top = top + 'px';
+                toolbar.classList.add('show');
+                toolbarVisible = true;
+            }
+
+            // 隐藏工具栏（同时隐藏颜色选择器）
+            function hideToolbar() {
+                toolbar.classList.remove('show');
+                toolbarVisible = false;
+                hideColorPicker();
+                savedRange = null;
+            }
+
+            // 保存选区
+            function saveSelection() {
+                const sel = window.getSelection();
+                if (sel && sel.rangeCount > 0 && !sel.isCollapsed) {
+                    try {
+                        savedRange = sel.getRangeAt(0).cloneRange();
+                    } catch (e) {
+                        savedRange = null;
+                    }
+                } else {
+                    savedRange = null;
+                }
+            }
+
+            // 恢复选区
+            function restoreSelection() {
+                if (savedRange) {
+                    try {
+                        const sel = window.getSelection();
+                        sel.removeAllRanges();
+                        sel.addRange(savedRange);
+                    } catch (e) {
+                        console.warn('恢复选区失败:', e);
+                    }
+                }
+            }
+
+            // 处理选区变化
+            function handleSelectionChange() {
+                const sel = window.getSelection();
+                if (!sel || sel.rangeCount === 0 || sel.isCollapsed) {
+                    if (!pickerVisible) {
+                        hideToolbar();
+                    }
+                    return;
+                }
+
+                if (!isInEditable(sel)) {
+                    if (!pickerVisible) {
+                        hideToolbar();
+                    }
+                    return;
+                }
+
+                const rect = getSelectionRect(sel);
+                if (!rect || rect.width < 2 || rect.height < 2) {
+                    if (!pickerVisible) {
+                        hideToolbar();
+                    }
+                    return;
+                }
+
+                savedRange = sel.getRangeAt(0).cloneRange();
+                showToolbar(rect);
+            }
+
+            // 监听选区变化
+            let selectionTimeout = null;
+            document.addEventListener('selectionchange', function() {
+                clearTimeout(selectionTimeout);
+                selectionTimeout = setTimeout(function() {
+                    handleSelectionChange();
+                }, 50);
+            });
+
+            // 监听滚动重新定位
+            let scrollTimeout = null;
+            window.addEventListener('scroll', function() {
+                if (toolbarVisible) {
+                    clearTimeout(scrollTimeout);
+                    scrollTimeout = setTimeout(function() {
+                        const sel = window.getSelection();
+                        if (sel && !sel.isCollapsed && isInEditable(sel)) {
+                            const rect = getSelectionRect(sel);
+                            if (rect && rect.width >= 2 && rect.height >= 2) {
+                                showToolbar(rect);
+                            } else {
+                                if (!pickerVisible) hideToolbar();
+                            }
+                        } else {
+                            if (!pickerVisible) hideToolbar();
+                        }
+                    }, 80);
+                }
+            });
+
+            // 阻止工具栏和颜色选择器点击导致失去选区
+            toolbar.addEventListener('mousedown', function(e) {
+                e.preventDefault();
+            });
+
+            customPicker.addEventListener('mousedown', function(e) {
+                e.preventDefault();
+            });
+
+            // 格式按钮（加粗、斜体）
+            toolbar.addEventListener('click', function(e) {
+                const btn = e.target.closest('.fmt-btn');
+                if (!btn) return;
+                const cmd = btn.dataset.cmd;
+                if (cmd) {
+                    restoreSelection();
+                    document.execCommand(cmd, false, null);
+                    document.activeElement && document.activeElement.focus();
+                    saveSelection();
+                    setTimeout(function() {
+                        handleSelectionChange();
+                    }, 20);
+                }
+            });
+
+            // ---- 颜色选择器按钮点击 ----
+            colorPickerBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+
+                const rect = this.getBoundingClientRect();
+                const anchorRect = {
+                    left: rect.left,
+                    right: rect.right,
+                    top: rect.top,
+                    bottom: rect.bottom,
+                    width: rect.width,
+                    height: rect.height
+                };
+
+                if (pickerVisible) {
+                    hideColorPicker();
+                    return;
+                }
+
+                saveSelection();
+                renderColorGrid(currentColor);
+                pickerColorInput.value = currentColor;
+                pickerHexInput.value = currentColor;
+                showColorPicker(anchorRect);
+            });
+
+            // ---- 关闭颜色选择器 ----
+            closePickerBtn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                hideColorPicker();
+                setTimeout(function() {
+                    handleSelectionChange();
+                }, 50);
+            });
+
+            // ---- 自定义颜色输入（颜色选择器 input） ----
+            pickerColorInput.addEventListener('input', function(e) {
+                e.stopPropagation();
+                const color = this.value;
+                pickerHexInput.value = color;
+                document.querySelectorAll('.color-swatch').forEach(function(el) {
+                    el.classList.toggle('active', el.dataset.color === color);
+                });
+                applyColor(color);
+            });
+
+            // ---- 自定义颜色输入（十六进制文本输入） ----
+            pickerHexInput.addEventListener('input', function(e) {
+                e.stopPropagation();
+                let val = this.value.trim();
+                if (val && !val.startsWith('#')) {
+                    val = '#' + val;
+                }
+                if (val.match(/^#[0-9a-fA-F]{6}$/)) {
+                    pickerColorInput.value = val;
+                    document.querySelectorAll('.color-swatch').forEach(function(el) {
+                        el.classList.toggle('active', el.dataset.color === val);
+                    });
+                    applyColor(val);
+                }
+            });
+
+            pickerHexInput.addEventListener('blur', function() {
+                let val = this.value.trim();
+                if (!val.match(/^#[0-9a-fA-F]{6}$/)) {
+                    this.value = currentColor;
+                }
+            });
+
+            pickerHexInput.addEventListener('focus', function() {
+                if (this.value && !this.value.startsWith('#')) {
+                    this.value = '#' + this.value;
+                }
+            });
+
+            // ---- 点击颜色选择器外部关闭 ----
+            document.addEventListener('mousedown', function(e) {
+                if (pickerVisible) {
+                    const target = e.target;
+                    if (!customPicker.contains(target) && target !== colorPickerBtn && !colorPickerBtn.contains(
+                            target)) {
+                        hideColorPicker();
+                        setTimeout(function() {
+                            handleSelectionChange();
+                        }, 50);
+                    }
+                }
+            });
+
+            // 点击页面其他地方隐藏工具栏（当颜色选择器未打开时）
+            document.addEventListener('mousedown', function(e) {
+                if (toolbarVisible && !pickerVisible && !toolbar.contains(e.target)) {
+                    const target = e.target;
+                    let inEditable = false;
+                    let node = target;
+                    while (node) {
+                        if (node.classList && (node.classList.contains('info-value') || node.classList.contains(
+                                'editable-block'))) {
+                            inEditable = true;
+                            break;
+                        }
+                        node = node.parentNode;
+                    }
+                    if (!inEditable) {
+                        hideToolbar();
+                    }
+                }
+            });
+
+            // ============================================================
+            // 9. 导出图片
+            // ============================================================
             const exportBtn = document.getElementById('exportBtn');
             const appContainer = document.getElementById('appContainer');
             const toolbarCard = document.getElementById('toolbarCard');
 
-            // 检查 html2canvas 是否加载
             if (typeof html2canvas === 'undefined') {
                 exportBtn.textContent = '加载中...';
                 exportBtn.disabled = true;
@@ -1276,58 +2238,77 @@
                     return;
                 }
 
-                const originalText = btn.textContent;
-                btn.textContent = '导出中...';
-                btn.disabled = true;
+                hideToolbar();
+                hideColorPicker();
+                resizeAll();
 
-                const width = appContainer.scrollWidth;
-                const height = appContainer.scrollHeight;
+                requestAnimationFrame(function() {
+                    setTimeout(function() {
+                        const originalText = btn.textContent;
+                        btn.textContent = '导出中...';
+                        btn.disabled = true;
 
-                html2canvas(appContainer, {
-                    scale: 2,
-                    useCORS: true,
-                    allowTaint: true,
-                    backgroundColor: '#f2f5fa',
-                    logging: false,
-                    width: width,
-                    height: height,
-                    windowWidth: width,
-                    windowHeight: height,
-                    ignoreElements: function(element) {
-                        if (element === toolbarCard || toolbarCard.contains(element)) {
-                            return true;
-                        }
-                        return false;
-                    }
-                }).then(function(canvas) {
-                    const padding = 76;
-                    const newWidth = canvas.width + padding * 2;
-                    const newHeight = canvas.height + padding * 2;
+                        const width = appContainer.scrollWidth;
+                        const height = appContainer.scrollHeight;
 
-                    const newCanvas = document.createElement('canvas');
-                    newCanvas.width = newWidth;
-                    newCanvas.height = newHeight;
-                    const ctx = newCanvas.getContext('2d');
+                        html2canvas(appContainer, {
+                            scale: 2,
+                            useCORS: true,
+                            allowTaint: true,
+                            backgroundColor: '#f2f5fa',
+                            logging: false,
+                            width: width,
+                            height: height,
+                            windowWidth: width,
+                            windowHeight: height,
+                            ignoreElements: function(element) {
+                                if (element === toolbarCard || toolbarCard.contains(element)) {
+                                    return true;
+                                }
+                                return false;
+                            },
+                            onclone: function(clonedDoc) {
+                                const clonedBlocks = clonedDoc.querySelectorAll(
+                                    '.editable-block, .info-value');
+                                clonedBlocks.forEach(function(el) {
+                                    el.style.height = 'auto';
+                                    el.style.height = el.scrollHeight + 'px';
+                                    el.style.overflow = 'visible';
+                                });
+                            }
+                        }).then(function(canvas) {
+                            const padding = 76;
+                            const newWidth = canvas.width + padding;
+                            const newHeight = canvas.height + padding;
 
-                    ctx.fillStyle = '#f2f5fa';
-                    ctx.fillRect(0, 0, newWidth, newHeight);
-                    ctx.drawImage(canvas, padding, padding);
+                            const newCanvas = document.createElement('canvas');
+                            newCanvas.width = newWidth;
+                            newCanvas.height = newHeight;
+                            const ctx = newCanvas.getContext('2d');
 
-                    btn.textContent = originalText;
-                    btn.disabled = false;
-                    const link = document.createElement('a');
-                    link.download = 'TRPG招募.png';
-                    link.href = newCanvas.toDataURL('image/png');
-                    link.click();
-                }).catch(function(err) {
-                    btn.textContent = originalText;
-                    btn.disabled = false;
-                    console.error('导出失败:', err);
-                    alert('导出图片失败，请重试或检查控制台错误信息。');
+                            ctx.fillStyle = '#f2f5fa';
+                            ctx.fillRect(0, 0, newWidth, newHeight);
+                            ctx.drawImage(canvas, padding, padding);
+
+                            btn.textContent = originalText;
+                            btn.disabled = false;
+
+                            const link = document.createElement('a');
+                            link.download = 'TRPG招募.png';
+                            link.href = newCanvas.toDataURL('image/png');
+                            link.click();
+                        }).catch(function(err) {
+                            btn.textContent = originalText;
+                            btn.disabled = false;
+                            console.error('导出失败:', err);
+                            alert('导出图片失败，请重试或检查控制台错误信息。');
+                        });
+                    }, 200);
                 });
             });
 
             console.log('TRPG 招募页面已加载，当前模式: 招募PL');
+            console.log('富文本编辑工具栏已启用 — 选中文字即可使用（加粗/斜体/颜色）');
         })();
     </script>
 
