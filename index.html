@@ -2147,7 +2147,7 @@
             });
 
             // ============================================================
-            // 9. 导出图片（四周留白 + 修复输入框文字偏移）
+            // 9. 导出图片（PC端右侧0.4cm，手机端右侧0.8cm）
             // ============================================================
             const exportBtn = document.getElementById('exportBtn');
             const appContainer = document.getElementById('appContainer');
@@ -2208,7 +2208,7 @@
                                 return false;
                             },
                             onclone: function(clonedDoc) {
-                                // 修正输入框文字偏移：设置垂直居中
+                                // 修正输入框文字偏移
                                 const inputs = clonedDoc.querySelectorAll('input[type="number"]');
                                 inputs.forEach(function(inp) {
                                     inp.style.lineHeight = 'normal';
@@ -2228,10 +2228,18 @@
                                 });
                             }
                         }).then(function(canvas) {
-                            // 四周留白（约1cm = 76px 在2x缩放下）
-                            const padding = 76;
-                            const newWidth = canvas.width + padding * 2;
-                            const newHeight = canvas.height + padding * 2;
+                            // 判断是否为 PC（屏幕宽度 >= 768px 视为 PC）
+                            const isPC = window.innerWidth >= 768;
+
+                            // 边距：上、左、下固定 1cm (76px)
+                            const paddingTop = 76;
+                            const paddingLeft = 76;
+                            const paddingBottom = 76;
+                            // 右侧：PC 0.4cm (30px)，手机 0.8cm (60px)
+                            const paddingRight = isPC ? 30 : 60;
+
+                            const newWidth = canvas.width + paddingLeft + paddingRight;
+                            const newHeight = canvas.height + paddingTop + paddingBottom;
 
                             const newCanvas = document.createElement('canvas');
                             newCanvas.width = newWidth;
@@ -2240,7 +2248,7 @@
 
                             ctx.fillStyle = '#f2f5fa';
                             ctx.fillRect(0, 0, newWidth, newHeight);
-                            ctx.drawImage(canvas, padding, padding);
+                            ctx.drawImage(canvas, paddingLeft, paddingTop);
 
                             btn.textContent = originalText;
                             btn.disabled = false;
