@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes" />
     <title>TRPG招募</title>
     <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js">
     </script>
@@ -21,7 +21,7 @@
             display: flex;
             justify-content: center;
             align-items: flex-start;
-            padding: 40px 20px;
+            padding: 20px 12px;
         }
 
         /* ===== 主容器 ===== */
@@ -33,7 +33,7 @@
             backdrop-filter: blur(14px);
             -webkit-backdrop-filter: blur(14px);
             border-radius: 40px;
-            padding: 36px 42px 44px;
+            padding: 28px 20px 32px;
             box-shadow: 0 24px 56px -16px rgba(10, 30, 60, 0.22), 0 6px 20px -6px rgba(0, 0, 0, 0.06);
             border: 1px solid rgba(255, 255, 255, 0.6);
             transition: all 0.2s;
@@ -45,16 +45,16 @@
             flex-wrap: wrap;
             align-items: center;
             justify-content: flex-end;
-            gap: 12px 18px;
-            padding: 10px 20px;
-            margin-bottom: 24px;
+            gap: 10px 14px;
+            padding: 10px 16px;
+            margin-bottom: 20px;
             background: rgba(255, 255, 255, 0.7);
             backdrop-filter: blur(4px);
             -webkit-backdrop-filter: blur(4px);
             border-radius: 20px;
             border: 1px solid rgba(255, 255, 255, 0.85);
             box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03);
-            min-height: 56px;
+            min-height: 50px;
             transition: background 0.3s;
         }
 
@@ -67,7 +67,7 @@
             cursor: pointer;
             transition: all 0.25s ease;
             letter-spacing: 0.3px;
-            padding: 8px 18px;
+            padding: 6px 16px;
             white-space: nowrap;
             display: inline-flex;
             align-items: center;
@@ -117,27 +117,27 @@
         /* ===== 顶部标题 ===== */
         .app-header {
             text-align: center;
-            padding-bottom: 28px;
-            margin-bottom: 30px;
+            padding-bottom: 20px;
+            margin-bottom: 22px;
             border-bottom: 2px solid rgba(60, 80, 140, 0.12);
             position: relative;
         }
 
         .app-header h1 {
-            font-size: 36px;
+            font-size: 28px;
             font-weight: 700;
-            letter-spacing: 6px;
+            letter-spacing: 4px;
             color: #1a264f;
             display: inline-block;
             position: relative;
             transition: color 0.3s;
         }
 
-        /* ===== 双列网格 ===== */
+        /* ===== 双列网格（默认桌面双列） ===== */
         .grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 32px 40px;
+            gap: 28px 32px;
             align-items: start;
         }
 
@@ -145,7 +145,7 @@
         .col {
             display: flex;
             flex-direction: column;
-            gap: 20px;
+            gap: 18px;
             min-width: 0;
         }
 
@@ -154,25 +154,25 @@
             background: rgba(255, 255, 255, 0.7);
             backdrop-filter: blur(4px);
             -webkit-backdrop-filter: blur(4px);
-            border-radius: 20px;
-            padding: 22px 24px 24px;
+            border-radius: 18px;
+            padding: 18px 18px 20px;
             border: 1px solid rgba(255, 255, 255, 0.85);
             box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03);
             transition: background 0.3s, box-shadow 0.2s;
         }
 
         .block-title {
-            font-size: 17px;
+            font-size: 16px;
             font-weight: 600;
             color: #1a264f;
             letter-spacing: 0.5px;
-            margin-bottom: 14px;
+            margin-bottom: 12px;
             transition: color 0.3s;
         }
 
         /* ===== 左列 — 模组信息标题 ===== */
         .mod-title {
-            font-size: 22px;
+            font-size: 20px;
             font-weight: 700;
             color: #1a264f;
             letter-spacing: 1.5px;
@@ -186,7 +186,7 @@
             width: 100%;
             height: 0;
             padding-bottom: 56.25%;
-            border-radius: 16px;
+            border-radius: 14px;
             overflow: hidden;
             background: #e8ecf5;
             border: 2px dashed rgba(90, 110, 180, 0.25);
@@ -216,7 +216,7 @@
             align-items: center;
             justify-content: center;
             color: #8a9bbd;
-            font-size: 16px;
+            font-size: 15px;
             font-weight: 500;
             letter-spacing: 1px;
             pointer-events: none;
@@ -228,7 +228,7 @@
         }
 
         .image-upload-wrapper .upload-placeholder .arrow-icon {
-            font-size: 28px;
+            font-size: 24px;
             font-weight: 300;
             color: #b0c0dd;
             line-height: 1;
@@ -253,7 +253,7 @@
             display: flex;
             flex-direction: column;
             gap: 6px;
-            padding: 4px 0 2px 24px;
+            padding: 4px 0 2px 18px;
         }
 
         .info-row {
@@ -266,12 +266,12 @@
 
         .info-label {
             display: inline-block;
-            width: 140px;
+            width: 120px;
             flex-shrink: 0;
             text-align: left;
             font-weight: 700;
             color: #111b3a;
-            font-size: 15px;
+            font-size: 14px;
             letter-spacing: 0.02em;
             line-height: 1.6;
             transition: color 0.3s;
@@ -279,7 +279,7 @@
 
         .info-value {
             flex: 1;
-            font-size: 15px;
+            font-size: 14px;
             font-weight: 500;
             padding: 2px 6px;
             border-radius: 6px;
@@ -310,16 +310,16 @@
         /* ===== 可编辑内容块 ===== */
         .editable-block {
             width: 100%;
-            padding: 14px 18px;
-            font-size: 15px;
+            padding: 12px 16px;
+            font-size: 14px;
             font-family: inherit;
             line-height: 1.7;
             color: #1a264f;
             background: rgba(255, 255, 255, 0.5);
             border: 1.5px solid rgba(60, 80, 160, 0.15);
-            border-radius: 14px;
+            border-radius: 12px;
             outline: none;
-            min-height: 72px;
+            min-height: 64px;
             box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.02);
             transition: border-color 0.2s, box-shadow 0.2s, background 0.2s, color 0.3s;
             word-break: break-word;
@@ -349,11 +349,11 @@
         }
         .merged-card .merged-section+.merged-section {
             border-top: 1px solid rgba(60, 80, 140, 0.08);
-            padding-top: 14px;
+            padding-top: 12px;
             margin-top: 4px;
         }
         .merged-card .section-label {
-            font-size: 15px;
+            font-size: 14px;
             font-weight: 600;
             color: #1a264f;
             display: block;
@@ -365,22 +365,22 @@
         .play-style-group {
             display: flex;
             flex-wrap: wrap;
-            gap: 10px 16px;
+            gap: 8px 12px;
         }
 
         .option-chip {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
             cursor: pointer;
-            padding: 6px 16px 6px 12px;
+            padding: 4px 12px 4px 10px;
             border-radius: 40px;
             background: rgba(255, 255, 255, 0.5);
             border: 1.5px solid transparent;
             transition: all 0.2s ease;
             user-select: none;
             font-weight: 500;
-            font-size: 15px;
+            font-size: 14px;
             color: #3d4a6b;
         }
 
@@ -390,8 +390,8 @@
         }
 
         .option-chip .dot {
-            width: 18px;
-            height: 18px;
+            width: 16px;
+            height: 16px;
             border-radius: 50%;
             background: #d0d8e8;
             flex-shrink: 0;
@@ -404,8 +404,8 @@
 
         .option-chip .dot::after {
             content: '';
-            width: 8px;
-            height: 8px;
+            width: 7px;
+            height: 7px;
             border-radius: 50%;
             background: transparent;
             transition: all 0.25s ease;
@@ -433,7 +433,7 @@
             border-radius: 0;
             background: transparent;
             color: #fff;
-            font-size: 12px;
+            font-size: 11px;
             font-weight: 700;
             line-height: 1;
             position: static;
@@ -445,12 +445,12 @@
             display: flex;
             align-items: center;
             flex-wrap: wrap;
-            gap: 8px 14px;
+            gap: 6px 12px;
             padding: 2px 0;
         }
 
         .form-row .label {
-            font-size: 15px;
+            font-size: 14px;
             font-weight: 600;
             color: #1a264f;
             white-space: nowrap;
@@ -458,18 +458,20 @@
         }
 
         .form-row .input-text {
-            padding: 8px 14px;
-            font-size: 15px;
+            padding: 6px 12px;
+            font-size: 14px;
             font-family: inherit;
             border: 1.5px solid rgba(60, 80, 160, 0.15);
-            border-radius: 12px;
+            border-radius: 10px;
             outline: none;
             background: rgba(255, 255, 255, 0.5);
             transition: border-color 0.2s, box-shadow 0.2s, color 0.3s;
             color: #1a264f;
-            width: 72px;
+            width: 64px;
             text-align: center;
             font-weight: 500;
+            line-height: 1.5;
+            height: auto;
         }
 
         .form-row .input-text:focus {
@@ -479,7 +481,7 @@
         }
 
         .form-row .input-text.number {
-            width: 64px;
+            width: 56px;
             -moz-appearance: textfield;
         }
         .form-row .input-text.number::-webkit-outer-spin-button,
@@ -510,12 +512,12 @@
             display: flex;
             flex-wrap: wrap;
             align-items: center;
-            gap: 8px 18px;
+            gap: 6px 14px;
             padding: 2px 0;
         }
 
         .pay-group .label {
-            font-size: 15px;
+            font-size: 14px;
             font-weight: 600;
             color: #1a264f;
             white-space: nowrap;
@@ -524,21 +526,21 @@
 
         .pay-options {
             display: flex;
-            gap: 8px 16px;
+            gap: 6px 12px;
             flex-wrap: wrap;
         }
 
         .option-chip.small {
-            padding: 4px 14px 4px 10px;
-            font-size: 14px;
+            padding: 3px 12px 3px 8px;
+            font-size: 13px;
         }
         .option-chip.small .dot {
-            width: 16px;
-            height: 16px;
+            width: 14px;
+            height: 14px;
         }
         .option-chip.small .dot::after {
-            width: 7px;
-            height: 7px;
+            width: 6px;
+            height: 6px;
         }
         .option-chip.small.active .dot::after {
             font-size: 10px;
@@ -559,11 +561,11 @@
         .quote-wrap.open {
             max-height: 200px;
             opacity: 1;
-            margin-top: 14px;
+            margin-top: 12px;
         }
 
         .quote-wrap .quote-label {
-            font-size: 14px;
+            font-size: 13px;
             font-weight: 600;
             color: #4a6cf7;
             display: block;
@@ -572,9 +574,9 @@
         }
 
         .quote-wrap .editable-block {
-            min-height: 48px;
-            padding: 12px 16px;
-            font-size: 14px;
+            min-height: 44px;
+            padding: 10px 14px;
+            font-size: 13px;
         }
 
         /* ===== GM / 要求 / 事前须知 大文本框 ===== */
@@ -582,105 +584,42 @@
             margin-bottom: 10px;
         }
 
-        /* ===== 响应式 ===== */
-        @media (max-width: 860px) {
+        /* ============================================================ */
+        /* ===== 移动端适配：单列布局 ===== */
+        /* ============================================================ */
+        @media (max-width: 720px) {
             body {
-                padding: 20px 12px;
+                padding: 12px 8px;
             }
             .app {
-                padding: 24px 18px 30px;
+                padding: 16px 12px 20px;
                 border-radius: 28px;
             }
-            .toolbar-card {
-                padding: 10px 14px;
-                gap: 10px 14px;
-                min-height: 48px;
-            }
-            .toolbar-btn {
-                font-size: 13px;
-                padding: 6px 14px;
-            }
-            .app-header h1 {
-                font-size: 28px;
-                letter-spacing: 3px;
-            }
             .grid {
-                gap: 24px 20px;
+                grid-template-columns: 1fr !important;
+                gap: 20px;
             }
-            .block {
-                padding: 18px 16px 20px;
-                border-radius: 16px;
-            }
-            .info-grid {
-                padding-left: 16px;
-            }
-            .info-label {
-                width: 120px;
-                font-size: 14px;
-            }
-            .info-value {
-                font-size: 14px;
-            }
-            .option-chip {
-                font-size: 14px;
-                padding: 5px 12px 5px 10px;
-            }
-            .option-chip .dot {
-                width: 16px;
-                height: 16px;
-            }
-            .form-row .label {
-                font-size: 14px;
-            }
-            .form-row .input-text {
-                font-size: 14px;
-                padding: 6px 12px;
-                width: 60px;
-            }
-            .form-row .input-text.number {
-                width: 56px;
-            }
-            .pay-group .label {
-                font-size: 14px;
-            }
-            .mod-title {
-                font-size: 20px;
-            }
-        }
-
-        @media (max-width: 680px) {
-            .app {
-                padding: 16px 12px 22px;
-                border-radius: 20px;
+            .col {
+                gap: 16px;
             }
             .toolbar-card {
                 padding: 8px 12px;
-                min-height: 40px;
                 gap: 8px 10px;
                 justify-content: center;
+                min-height: 44px;
+                border-radius: 16px;
             }
             .toolbar-btn {
                 font-size: 12px;
                 padding: 5px 12px;
             }
-            .app-header {
-                padding-bottom: 18px;
-                margin-bottom: 18px;
-            }
             .app-header h1 {
                 font-size: 22px;
-                letter-spacing: 2px;
-            }
-            .grid {
-                gap: 16px 12px;
-                grid-template-columns: 1fr 1fr;
+                letter-spacing: 3px;
             }
             .block {
-                padding: 14px 12px 16px;
+                padding: 14px 14px 16px;
                 border-radius: 14px;
-            }
-            .mod-title {
-                font-size: 18px;
             }
             .info-grid {
                 padding-left: 12px;
@@ -691,22 +630,24 @@
             }
             .info-value {
                 font-size: 13px;
-                padding: 1px 4px;
+            }
+            .mod-title {
+                font-size: 18px;
             }
             .block-title {
                 font-size: 15px;
                 margin-bottom: 10px;
             }
             .editable-block {
-                font-size: 14px;
+                font-size: 13px;
                 padding: 10px 14px;
-                min-height: 56px;
-                border-radius: 12px;
+                min-height: 52px;
+                border-radius: 10px;
             }
             .option-chip {
                 font-size: 13px;
                 padding: 4px 10px 4px 8px;
-                gap: 8px;
+                gap: 6px;
             }
             .option-chip .dot {
                 width: 14px;
@@ -719,42 +660,39 @@
             .option-chip.active .dot::after {
                 font-size: 9px;
             }
-            .form-row {
-                gap: 4px 8px;
-            }
             .form-row .label {
                 font-size: 13px;
             }
             .form-row .input-text {
                 font-size: 13px;
-                padding: 5px 8px;
-                width: 50px;
-                border-radius: 10px;
+                padding: 4px 10px;
+                width: 56px;
+                line-height: 1.5;
             }
             .form-row .input-text.number {
-                width: 46px;
+                width: 50px;
             }
             .pay-group .label {
                 font-size: 13px;
             }
             .pay-options {
-                gap: 4px 10px;
+                gap: 4px 8px;
             }
             .option-chip.small {
                 font-size: 12px;
-                padding: 3px 10px 3px 8px;
+                padding: 2px 10px 2px 8px;
             }
             .option-chip.small .dot {
-                width: 14px;
-                height: 14px;
+                width: 12px;
+                height: 12px;
             }
             .quote-wrap .quote-label {
-                font-size: 13px;
+                font-size: 12px;
             }
             .quote-wrap .editable-block {
-                font-size: 13px;
-                min-height: 44px;
-                padding: 10px 14px;
+                font-size: 12px;
+                min-height: 40px;
+                padding: 8px 12px;
             }
             .big-textarea-block .block-title {
                 font-size: 15px;
@@ -762,46 +700,68 @@
             .merged-card .section-label {
                 font-size: 14px;
             }
+            .image-upload-wrapper .upload-placeholder {
+                font-size: 14px;
+            }
+            .image-upload-wrapper .upload-placeholder .arrow-icon {
+                font-size: 22px;
+            }
             #plCountSection {
                 max-height: 100px;
             }
             #plCountSection.hidden {
                 max-height: 0;
             }
+            /* 公告栏适应 */
+            #announcementBox {
+                padding: 22px 20px 20px;
+                max-width: 94%;
+                border-radius: 18px;
+            }
+            #announcementBox .announce-title {
+                font-size: 17px;
+            }
+            #announcementBox .announce-body {
+                font-size: 14px;
+                line-height: 1.6;
+            }
+            #announcementBox .close-btn {
+                top: 12px;
+                right: 14px;
+                font-size: 20px;
+            }
         }
 
-        @media (max-width: 480px) {
+        @media (max-width: 420px) {
             body {
-                padding: 10px 4px;
+                padding: 8px 4px;
             }
             .app {
                 padding: 12px 8px 16px;
-                border-radius: 16px;
+                border-radius: 20px;
+            }
+            .grid {
+                gap: 14px;
+            }
+            .col {
+                gap: 12px;
             }
             .toolbar-card {
                 padding: 6px 8px;
-                min-height: 34px;
                 gap: 6px 8px;
-                border-radius: 14px;
-                justify-content: center;
+                min-height: 36px;
+                border-radius: 12px;
             }
             .toolbar-btn {
                 font-size: 11px;
                 padding: 4px 10px;
             }
-            .app-header {
-                padding-bottom: 14px;
-                margin-bottom: 14px;
-            }
             .app-header h1 {
                 font-size: 18px;
-                letter-spacing: 1.5px;
-            }
-            .grid {
-                gap: 10px 8px;
+                letter-spacing: 2px;
             }
             .block {
-                padding: 10px 8px 12px;
+                padding: 10px 10px 12px;
                 border-radius: 12px;
             }
             .info-grid {
@@ -813,6 +773,18 @@
             }
             .info-value {
                 font-size: 12px;
+            }
+            .mod-title {
+                font-size: 16px;
+            }
+            .block-title {
+                font-size: 14px;
+            }
+            .editable-block {
+                font-size: 12px;
+                padding: 8px 12px;
+                min-height: 44px;
+                border-radius: 8px;
             }
             .option-chip {
                 font-size: 12px;
@@ -826,27 +798,11 @@
             .form-row .input-text {
                 font-size: 12px;
                 padding: 4px 6px;
-                width: 40px;
+                width: 44px;
+                line-height: 1.5;
             }
             .form-row .input-text.number {
-                width: 38px;
-            }
-            .mod-title {
-                font-size: 16px;
-            }
-            .block-title {
-                font-size: 14px;
-            }
-            .editable-block {
-                font-size: 13px;
-                padding: 8px 12px;
-                min-height: 48px;
-            }
-            .image-upload-wrapper .upload-placeholder {
-                font-size: 13px;
-            }
-            .image-upload-wrapper .upload-placeholder .arrow-icon {
-                font-size: 22px;
+                width: 40px;
             }
             .pay-group .label {
                 font-size: 12px;
@@ -856,8 +812,35 @@
                 padding: 2px 8px 2px 6px;
             }
             .option-chip.small .dot {
-                width: 12px;
-                height: 12px;
+                width: 10px;
+                height: 10px;
+            }
+            .quote-wrap .editable-block {
+                font-size: 12px;
+                min-height: 36px;
+                padding: 6px 10px;
+            }
+            .image-upload-wrapper .upload-placeholder {
+                font-size: 13px;
+            }
+            .image-upload-wrapper .upload-placeholder .arrow-icon {
+                font-size: 20px;
+            }
+            #announcementBox {
+                padding: 16px 14px 16px;
+                border-radius: 14px;
+            }
+            #announcementBox .announce-title {
+                font-size: 15px;
+            }
+            #announcementBox .announce-body {
+                font-size: 13px;
+                line-height: 1.5;
+            }
+            #announcementBox .close-btn {
+                top: 10px;
+                right: 12px;
+                font-size: 18px;
             }
         }
 
@@ -974,7 +957,7 @@
             font-style: italic;
         }
 
-        /* ---- 颜色选择器按钮（圆形，缩小尺寸） ---- */
+        /* ---- 颜色选择器按钮（圆形） ---- */
         #formatToolbar .fmt-btn.color-picker-btn {
             width: 28px;
             height: 28px;
@@ -1174,7 +1157,7 @@
             }
         }
 
-        /* 小屏适配 */
+        /* 小屏适配工具栏 */
         @media (max-width: 600px) {
             #formatToolbar {
                 padding: 4px 8px;
@@ -1236,7 +1219,7 @@
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
             border-radius: 24px;
-            padding: 32px 38px 30px;
+            padding: 28px 30px 26px;
             max-width: 520px;
             width: 92%;
             box-shadow: 0 24px 64px rgba(0, 0, 0, 0.20), 0 8px 24px rgba(0, 0, 0, 0.06);
@@ -1311,46 +1294,6 @@
             user-select: none;
             pointer-events: none;
         }
-
-        /* 响应式公告栏 */
-        @media (max-width: 600px) {
-            #announcementBox {
-                padding: 24px 22px 22px;
-                max-width: 94%;
-                border-radius: 20px;
-            }
-            #announcementBox .announce-title {
-                font-size: 17px;
-            }
-            #announcementBox .announce-body {
-                font-size: 14px;
-                line-height: 1.6;
-            }
-            #announcementBox .close-btn {
-                top: 12px;
-                right: 14px;
-                font-size: 20px;
-            }
-        }
-
-        @media (max-width: 400px) {
-            #announcementBox {
-                padding: 18px 16px 18px;
-                border-radius: 16px;
-            }
-            #announcementBox .announce-title {
-                font-size: 15px;
-            }
-            #announcementBox .announce-body {
-                font-size: 13px;
-                line-height: 1.5;
-            }
-            #announcementBox .close-btn {
-                top: 10px;
-                right: 12px;
-                font-size: 18px;
-            }
-        }
     </style>
 </head>
 
@@ -1420,7 +1363,7 @@
             </div>
         </header>
 
-        <!-- ===== 双列内容 ===== -->
+        <!-- ===== 双列内容（移动端自动变为单列） ===== -->
         <div class="grid">
 
             <!-- ===== 左列：模组信息 ===== -->
@@ -1469,7 +1412,7 @@
 
             </div>
 
-            <!-- ===== 右列：招募详情 ===== -->
+            <!-- ===== 右列：招募详情（移动端会接到左列下方） ===== -->
             <div class="col col-right">
 
                 <!-- 合并卡片：游玩方式 + 招募PL人数 + 有偿招募 -->
@@ -1569,16 +1512,13 @@
 
             closeAnnounceBtn.addEventListener('click', hideAnnouncement);
 
-            // 点击遮罩背景也可关闭（但不要误触内容区）
             overlay.addEventListener('click', function(e) {
                 if (e.target === overlay) {
                     hideAnnouncement();
                 }
             });
 
-            // 页面加载后显示公告
             window.addEventListener('load', function() {
-                // 延迟一点点，让页面渲染更平滑
                 setTimeout(showAnnouncement, 300);
             });
 
@@ -2207,7 +2147,7 @@
             });
 
             // ============================================================
-            // 9. 导出图片
+            // 9. 导出图片（四周留白 + 修复输入框文字偏移）
             // ============================================================
             const exportBtn = document.getElementById('exportBtn');
             const appContainer = document.getElementById('appContainer');
@@ -2268,6 +2208,17 @@
                                 return false;
                             },
                             onclone: function(clonedDoc) {
+                                // 修正输入框文字偏移：设置垂直居中
+                                const inputs = clonedDoc.querySelectorAll('input[type="number"]');
+                                inputs.forEach(function(inp) {
+                                    inp.style.lineHeight = 'normal';
+                                    inp.style.height = 'auto';
+                                    inp.style.padding = '4px 10px';
+                                    inp.style.display = 'inline-block';
+                                    inp.style.verticalAlign = 'middle';
+                                });
+
+                                // 确保文本框高度正确
                                 const clonedBlocks = clonedDoc.querySelectorAll(
                                     '.editable-block, .info-value');
                                 clonedBlocks.forEach(function(el) {
@@ -2277,9 +2228,10 @@
                                 });
                             }
                         }).then(function(canvas) {
+                            // 四周留白（约1cm = 76px 在2x缩放下）
                             const padding = 76;
-                            const newWidth = canvas.width + padding;
-                            const newHeight = canvas.height + padding;
+                            const newWidth = canvas.width + padding * 2;
+                            const newHeight = canvas.height + padding * 2;
 
                             const newCanvas = document.createElement('canvas');
                             newCanvas.width = newWidth;
